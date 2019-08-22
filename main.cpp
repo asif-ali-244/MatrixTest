@@ -209,7 +209,7 @@ void adjoint(int A[N][N],int adj[N][N])
     } 
   
     // temp is used to store cofactors of A[][] 
-    int sign = 1, temp[N][N]; 
+    int sig = 1, temp[N][N]; 
   
     for (int i=0; i<N; i++) 
     { 
@@ -220,11 +220,11 @@ void adjoint(int A[N][N],int adj[N][N])
   
             // sign of adj[j][i] positive if sum of row 
             // and column indexes is even. 
-            sign = ((i+j)%2==0)? 1: -1; 
+            sig = ((i+j)%2==0)? 1: -1; 
   
             // Interchanging rows and columns to get the 
             // transpose of the cofactor matrix 
-            adj[j][i] = (sign)*(determinant(temp, N-1)); 
+            adj[j][i] = (sig)*(determinant(temp, N-1)); 
         } 
     } 
 } 
